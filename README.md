@@ -14,4 +14,9 @@ Node js or Node,  is an open open source and cross platform runtime environment 
 
 
 
-# Section-1:
+# Section-1: Getting Started with Node.js
+- What is Node?
+- Node Architecture
+- How Node Works?
+- Installing Node
+- First Node Program
