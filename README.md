@@ -20,3 +20,18 @@ Node js or Node,  is an open open source and cross platform runtime environment 
 - How Node Works?
 - Installing Node
 - First Node Program
+
+# Section-2: Node Module System
+- Global Object
+- Modules
+- Creating a Module
+- Loading a Module
+- Module Wrapper Function
+- Path Module
+- OS Module
+- File System Module
+- Event Module
+- Event Arguments
+- Extending EventEmitter
+- HTTP Module
+  
