@@ -22,6 +22,7 @@ Node js or Node,  is an open open source and cross platform runtime environment 
 - First Node Program
 
 # Section-2: Node Module System
+**Node Core**
 - Global Object
 - Modules
 - Creating a Module
