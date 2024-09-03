@@ -35,4 +35,22 @@ Node js or Node,  is an open open source and cross platform runtime environment 
 - Event Arguments
 - Extending EventEmitter
 - HTTP Module
+
+# Section-3: Node Package Manager(NPM)
+- NPM
+- Package.json
+- Installing a Node Package
+- Using a Package
+- Package Dependencies
+- NPM Packages and Source Control
+- Semantic Version
+- List the Installed Packages
+- View Registry Info for a Package
+- Install Specific Version of a Package
+- Update Local Packages
+- DevDependencies
+- Uninstall a Package
+- Work with Global Packages
+- Publish a Package
+- Update a Published Package
   
