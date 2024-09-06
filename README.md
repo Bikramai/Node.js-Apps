@@ -55,5 +55,19 @@ Node js or Node,  is an open open source and cross platform runtime environment 
 - Update a Published Package
 
 # Section-4: Build RESTful APIs Using Express
+- RESTful Services
+- Introduction Express
+- Building First Web Sever
+- Nodemon
+- Environment Variables
+- Route Paramaters
+- Handling HTTP GET Requests
+- Handling HTTP POST Requests
+- Handling HTTP PUT Requests
+- Handling HTTP DELETE Requests
+- Calling Endpoints Using Postman
+- Input Validation
+- Project- Build the Genres API
+- BUilding RESTful API's with Express
 
   
