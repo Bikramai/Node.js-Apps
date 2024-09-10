@@ -13,6 +13,7 @@ app.get('/api/courses/:id', (req, res) => {
     res.send(req.params.id);
 });
 
+// query by name
 app.get('/api/posts/:year/:month', (req, res) => {
     res.send(req.query);
 });
