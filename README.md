@@ -12,6 +12,12 @@ Node js or Node,  is an open open source and cross platform runtime environment 
 - Large ecosystem of open-source libs
 - We use Node to build fast and scalable networking applications. It’s a perfect choice for building RESTful services.
 
+## How Node Works?
+
+- Node applications are asynchronous or non-blocking by default. That means when the application involves I/O operations (eg accessing the file system or the network), the thread doesn’t wait (or block) for the result of the operation. It is released to serve other clients.
+- Node applications are single-threaded. That means a single thread is used to serve all clients.
+- You should avoid using Node for CPU-intensive applications, such as a video encoding service. Because while executing these operations, other clients have to wait for the single thread to finish its job and be ready to serve them.
+- In Node, we don’t have browser environment objects such as window or the document object. Instead, we have other objects that are not available in browsers, such as objects for working with the file system, network, operating system, etc.
 
 
 # Section-1: Getting Started with Node.js
