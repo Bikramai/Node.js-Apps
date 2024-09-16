@@ -1,5 +1,6 @@
-## Node.js
+## Node.js-Vidly-App ( JavaScript + Node.js)
 
+## What is Node
 Node js or Node,  is an open open source and cross platform runtime environment for  executing JS code. Essentially, Node is a C++ program that embeds Chrome’s v8 engine, the fastest Js engine in the world. We often use Node to build back-end services also called API(Application Programming Interface).
 
 **Node is ideal for building highly-scalable, data-intensive and real-time backend services that power our client  applications. Special features of Node. Well, Node is easy to get started!**
