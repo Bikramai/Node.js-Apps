@@ -7,7 +7,7 @@ Node js or Node,  is an open open source and cross platform runtime environment 
 
 - Great for prototyping and agile development
 - Superfast and highly scalable services. It’s used in production by large companies such as PayPal, Uber, Netflix, Walmart, and so on.
-    - Infact, PayPal, they rebuild one of their java and spring based applications using Node, and found that the Node applications was
+    - Infact, PayPal, they rebuild one of their java and spring based applications using Node,  and found that the Node applications was
 - JavaScript everywhere - we can use Frontend and Backend means fullstack developer
 - Cleaner and more consistent codebase
 - Large ecosystem of open-source libs
