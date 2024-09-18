@@ -24,18 +24,19 @@ app.get('/api/courses/:id', (req, res) => {
     res.send(course);
 });
 
+app.get('/api/posts/:year/:month', (req, res) => {
+    res.send(req.query);
+});
+
 app.post('/api/courses', (req, res) =>{
     const schema = {
         name: Joi.string().min(6).required()
     };
 
     const result = Joi.validate(req.body, schema);
-    console.log(result);
-
-
-    if (!req.body.name || req.body.name.length < 3) {
+    if (result.error) {
         // 400 Bad Request
-        res.status(400).send('Name is required and should be minimum 6 characters.')
+        res.status(400).send(result.error.details[0].message)
         return; 
     }
 
