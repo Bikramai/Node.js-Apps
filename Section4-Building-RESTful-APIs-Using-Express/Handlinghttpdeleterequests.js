@@ -71,7 +71,7 @@ app.delete('/api/courses/:id', (req, res) => {
 
     // Return the same course
     res.send(course);
-})
+});
 
 function validateCourse(course) {
      // Validate
@@ -81,7 +81,7 @@ function validateCourse(course) {
     };
 
     return Joi.validate(course, schema);
-}
+};
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port port ${port}...`))
