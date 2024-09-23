@@ -77,4 +77,10 @@ Node js or Node,  is an open open source and cross platform runtime environment 
 - Project- Build the Genres API
 - BUilding RESTful API's with Express
 
+Section-5: Express-Advanced Topics
+- Middleware
+- Configuration
+- Debugging
+- Templating Engines
+
   
