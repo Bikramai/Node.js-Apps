@@ -19,3 +19,10 @@ app.listen(port, () => console.log(`Listening on port port ${port}...`))
 // app.post()
 // app.put()
 // app.delete()
+
+/*
+Note - In this implementation, we don't have if blocks, 
+we define new routeslike calling app.get, and with this 
+structure as our application grow, we can move some of these around to 
+different files.
+*/
