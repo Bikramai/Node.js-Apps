@@ -4,6 +4,7 @@ const app = express();
 
 app.use(express.json());
 
+
 const courses = [
     { id: 1, name: 'course1' },
     { id: 2, name: 'course2' },
@@ -37,7 +38,7 @@ app.post('/api/courses', (req, res) =>{
         name: req.body.name
     }
     courses.push(course);
-    req.send(course);
+    res.send(course);
 });
 
 app.put('/api/courses/:id', (req, res) =>{
