@@ -15,7 +15,7 @@ app.get('/', (req, res) =>{ // this is how we define a route
 })
 
 app.get('/api/courses', (req, res) => {
-    res.send([1, 2, 3]);
+    res.send(courses);
 })
 
 app.get('/api/courses/:id', (req, res) => {
@@ -40,15 +40,25 @@ app.post('/api/courses', (req, res) =>{
     req.send(course);
 });
 
+// Logic
+    // Look up the course
+    // If not existing, return 404
+    
+    // Validate
+    // If invalid, return 400 - Bad request
+
+    // Update course
+    // Return the updated course
+
+
 app.put('/api/courses/:id', (req, res) =>{
     // Look up the course
     // If not existing, return 404
     const course = courses.find(c => c.id === parseInt(req.params.id));
     if(!course) res.status(404).send('The course with the given ID was not found.');
 
-    const { error } = validateCourse(req.body);  // error.result
+    const { error } = validateCourse(req.body);  
     if (error) {
-        // 400 Bad Request
         res.status(400).send(error.details[0].message)
         return; 
     }
@@ -60,8 +70,6 @@ app.put('/api/courses/:id', (req, res) =>{
 });
 
 function validateCourse(course) {
-     // Validate
-    // If invalid, return 400 - Bad request
     const schema = {
         name: Joi.string().min(6).required()
     };
