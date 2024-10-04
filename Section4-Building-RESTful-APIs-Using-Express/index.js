@@ -72,7 +72,7 @@ app.delete('/api/courses/:id', (req, res) => {
 
     // Return the same course
     res.send(course);
-})
+});
 
 function validateCourse(course) {
      // Validate
