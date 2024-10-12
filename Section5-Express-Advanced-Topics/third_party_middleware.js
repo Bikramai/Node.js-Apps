@@ -9,6 +9,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+
+// Thirdparty Middleware
 app.use(helmet());
 app.use(morgan('tiny'));
 
