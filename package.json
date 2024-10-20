@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "debug": "^4.3.7",
     "joi": "^13.1.0"
   }
 }
