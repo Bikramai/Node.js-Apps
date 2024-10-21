@@ -1,5 +1,4 @@
-const startupDebugger = require('debug')('app:startup');
-const dbDebugger = require('debug')('app:db');
+const Debug = require('debug')('app:startup');
 const config = require('config')
 const morgan = require('morgan');
 const helmet = require('helmet');
@@ -16,12 +15,9 @@ app.use(helmet());
 
 if (app.get('env') === 'development') {
     app.use(morgan('tiny'));
-    startupDebugger('Morgan enabled...');
+    startupDebugger('Morgan enabled...'); // console.log()
     
 }
-
-// Db Work...
-dbDebugger('Connected to the database...');
 
 // Configuration
 // console.log('Application Name: ' + config.get('name'));
