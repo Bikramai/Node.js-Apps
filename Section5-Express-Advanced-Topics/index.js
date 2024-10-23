@@ -8,6 +8,9 @@ const auth = require('./auth')
 const express = require('express');
 const app = express();
 
+app.set('view engine', 'pug');
+app.set('views', './views'); // default value and optional if you want to overwrite the views
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -34,8 +37,8 @@ const courses = [
     { id: 3, name: 'course3' },
 ]
 
-app.get('/', (req, res) =>{ // this is how we define a route
-    res.send('Hello World!')
+app.get('/', (req, res) =>{ 
+    res.render('index', {title: 'My Express App', message: 'Hello'})
 })
 
 app.get('/api/courses', (req, res) => {
