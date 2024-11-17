@@ -6,6 +6,13 @@ getUser(1, (user) => {
     });
   });
 });
+
+getUser(1)
+  .then((user) => getRepositories(user.gitHubUsername))
+  .then((repos) => getCommits(repos[0]))
+  .then((commits) => console.log("Commits", commits))
+  .catch((err) => console.log("Error", err.message));
+
 console.log("After");
 
 function getUser(id) {
