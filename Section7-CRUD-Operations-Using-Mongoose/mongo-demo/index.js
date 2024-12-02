@@ -13,6 +13,7 @@ const courseSchema = new mongoose.Schema({
   isPublished: Boolean,
 });
 
+// In future need to fix this code is not working
 const Course = mongoose.model("Course", courseSchema);
 
 async function createCourse() {
