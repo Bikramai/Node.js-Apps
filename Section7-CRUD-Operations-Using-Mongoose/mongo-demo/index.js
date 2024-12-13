@@ -29,24 +29,7 @@ async function createCourse() {
 }
 
 async function getCourses() {
-  // or
-  // and
-
-  const courses = await Course
-    // .find({ author: 'Bikram', isPublish: true })
-
-    // Start with Bikram
-    .find({ author: /^Mosh/ })
-
-    // Ends with Limbu
-    .find({ author: /Limbu$/i })
-
-    // Contains Bikram
-    .find({ author: /.*Bikram.*/i })
-
-    .or([{ author: "Bikram" }, { isPublished: true }])
-    .and([{ author: "Bikram", isPublish: true }])
-    .find({ price: { $in: [10, 15, 20] } })
+  const courses = await Course.find({ author: "Bikram", isPublish: true })
     .limit(10)
     .sort({ name: 1 })
     .select({ name: 1, tags: 1 });
