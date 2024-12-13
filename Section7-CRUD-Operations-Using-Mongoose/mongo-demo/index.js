@@ -42,7 +42,7 @@ async function getCourses() {
     .find({ author: /Limbu$/i })
 
     // Contains Bikram
-    .find({ author: /.*Mosh.*/i })
+    .find({ author: /.*Bikram.*/i })
 
     .or([{ author: "Bikram" }, { isPublished: true }])
     .and([{ author: "Bikram", isPublish: true }])
