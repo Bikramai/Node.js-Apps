@@ -5,7 +5,7 @@ mongoose.connect('mongodb://localhost/mongo-exercises');
 const courseSchema = new mongoose.Schema({
     name: String,
     author: String,
-    tags: [ string ],
+    tags: [ String ],
     date: Date,
     isPublished: Boolean,
     price: Number
