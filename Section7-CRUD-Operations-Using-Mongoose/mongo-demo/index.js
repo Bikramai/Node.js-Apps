@@ -18,9 +18,9 @@ const Course = mongoose.model("Course", courseSchema);
 
 async function createCourse() {
   const course = new Course({
-    name: "Angular Course",
+    name: "Node.js Course",
     author: "Bikram",
-    tags: ["Angular", "Frontend"],
+    tags: ["Node.js", "Backend"],
     isPublished: true,
   });
 
@@ -29,35 +29,46 @@ async function createCourse() {
 }
 
 async function getCourses() {
-  const pageNumber = 2;
-  const pageSize = 10;
-  // /api/courses?pageNumber=2&pageSize=10
+    const pageNumber = 2;
+    const pageSize = 10;
 
-  const courses = await Course.find({ author: "Bikram", isPublish: true })
-    .skip((pageNumber - 1) * pageSize)
-    .limit(pageSize)
+  const courses = await Course
+    .find({ author: "Bikram", isPublished: true })
+    // .skip((pageNumber - 1) * pageSize)
+    .limit(10)
     .sort({ name: 1 })
     .countDocuments();
   console.log(courses);
 }
+//   const pageNumber = 2;
+//   const pageSize = 10;
+//   // /api/courses?pageNumber=2&pageSize=10
 
-async function updateCourse(id) {
-  // Approach: Query first
-  // findById()
-  // Modify its properties
-  // save()
-  const course = await Course.findById(id);
-  if (!course) return;
+//   const courses = await Course.find({ author: "Bikram", isPublish: true })
+//     .skip((pageNumber - 1) * pageSize)
+//     .limit(pageSize)
+//     .sort({ name: 1 })
+//     .countDocuments();
+//   console.log(courses);
+// }
 
-  course.isPublished = true;
-  course.author = "Another Author";
+// async function updateCourse(id) {
+//   // Approach: Query first
+//   // findById()
+//   // Modify its properties
+//   // save()
+//   const course = await Course.findById(id);
+//   if (!course) return;
 
-  const result = await course.save();
-  console.log(result);
+//   course.isPublished = true;
+//   course.author = "Another Author";
 
-  // Approach: Update first
-  // Update directly
-  // Optionally: get the updated document
-}
+//   const result = await course.save();
+//   console.log(result);
 
-updateCourses();
+//   // Approach: Update first
+//   // Update directly
+//   // Optionally: get the updated document
+// }
+
+getCourses();

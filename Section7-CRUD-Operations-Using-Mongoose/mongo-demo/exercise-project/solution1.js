@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/mongo-exercises');
+mongoose.connect('mongodb://localhost/exercise-project');
 
 const courseSchema = new mongoose.Schema({
     name: String,
