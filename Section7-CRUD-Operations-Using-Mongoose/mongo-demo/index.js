@@ -48,10 +48,14 @@ async function updateCourse(id) {
     }
   }, { new: true}); 
   console.log(course);
-
 }
 
-updateCourse('677164458235356e0e9e4a21');
+async function removeCourse(id) {
+  const result = await Course.deleteOne({_id: id});  
+    
+  console.log(result);
+}
+removeCourse('677164458235356e0e9e4a21');
 
 
 
