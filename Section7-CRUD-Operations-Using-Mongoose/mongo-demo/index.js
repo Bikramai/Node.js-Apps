@@ -41,13 +41,13 @@ async function getCourses() {
   console.log(courses);
 }
 async function updateCourse(id) {
-  const result = await Course.updateMany({ _id: id }, { 
+  const course = await Course.findByIdAndUpdate(id, { 
     $set: {
-      author: 'Bikram',
+      author: 'Jason',
       isPublished: false
     }
-  }); 
-  console.log(result);
+  }, { new: true}); 
+  console.log(course);
 
 }
 
