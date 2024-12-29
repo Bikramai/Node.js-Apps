@@ -40,6 +40,23 @@ async function getCourses() {
     .countDocuments();
   console.log(courses);
 }
+async function updateCourse(id) {
+  const course = await Course.findById(id);
+  if (!course) return;
+
+  course.isPublished = true;
+  course.author = "Another Author";
+
+  const result = await course.save();
+  console.log(result);
+
+}
+
+updateCourse('677164458235356e0e9e4a21');
+
+
+
+
 //   const pageNumber = 2;
 //   const pageSize = 10;
 //   // /api/courses?pageNumber=2&pageSize=10
@@ -71,4 +88,3 @@ async function getCourses() {
 //   // Optionally: get the updated document
 // }
 
-getCourses();
