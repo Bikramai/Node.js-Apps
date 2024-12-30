@@ -11,6 +11,12 @@ const courseSchema = new mongoose.Schema({
   tags: [String],
   date: { type: Date, default: Date.now },
   isPublished: Boolean,
+  price: {
+    type: Number,
+    required: function () {
+      return this.isPublished;
+    },
+  }
 });
 
 // In future need to fix this code is not working
@@ -22,6 +28,7 @@ async function createCourse() {
     author: "Bikram",
     tags: ["Node.js", "Backend"],
     isPublished: true,
+    // price: 15
   });
 
   try {
