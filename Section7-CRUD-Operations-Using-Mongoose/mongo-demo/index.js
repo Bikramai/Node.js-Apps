@@ -6,7 +6,7 @@ mongoose
   .catch((err) => console.error("Could not connect to MongoDB...", err));
 
 const courseSchema = new mongoose.Schema({
-  name: String,
+  name: { type: String, required: true },
   author: String,
   tags: [String],
   date: { type: Date, default: Date.now },
@@ -18,14 +18,19 @@ const Course = mongoose.model("Course", courseSchema);
 
 async function createCourse() {
   const course = new Course({
-    name: "Node.js Course",
+    // name: "Node.js Course",
     author: "Bikram",
     tags: ["Node.js", "Backend"],
     isPublished: true,
   });
 
-  const result = await course.save();
-  console.log(result);
+  try {
+    const result = await course.save();
+    console.log(result);
+  }
+  catch (ex) {
+    console.log(ex.message);
+  }
 }
 
 async function getCourses() {
@@ -56,39 +61,5 @@ async function removeCourse(id) {
   console.log(course);
 }
 
-removeCourse('677164458235356e0e9e4a21');
-
-
-
-
-//   const pageNumber = 2;
-//   const pageSize = 10;
-//   // /api/courses?pageNumber=2&pageSize=10
-
-//   const courses = await Course.find({ author: "Bikram", isPublish: true })
-//     .skip((pageNumber - 1) * pageSize)
-//     .limit(pageSize)
-//     .sort({ name: 1 })
-//     .countDocuments();
-//   console.log(courses);
-// }
-
-// async function updateCourse(id) {
-//   // Approach: Query first
-//   // findById()
-//   // Modify its properties
-//   // save()
-//   const course = await Course.findById(id);
-//   if (!course) return;
-
-//   course.isPublished = true;
-//   course.author = "Another Author";
-
-//   const result = await course.save();
-//   console.log(result);
-
-//   // Approach: Update first
-//   // Update directly
-//   // Optionally: get the updated document
-// }
+createCourse();
 
