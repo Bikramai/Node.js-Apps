@@ -47,7 +47,7 @@ async function createCourse() {
     name: "Node.js Course",
     category: "web",
     author: "Bikram",
-    tags: [],
+    // tags: [],
     isPublished: true,
     price: 15
   });
