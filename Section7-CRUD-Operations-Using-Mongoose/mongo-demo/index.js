@@ -22,9 +22,13 @@ const courseSchema = new mongoose.Schema({
   tags: {
     type: Array,
     validate: {
-      validator: function(v) {
-        return v && v.length > 0;
-        },
+      validator: async function (v) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(v && v.length > 0);
+          }, 4000);
+        });
+      },
       message: "A course should have atleast one tag"
     },
   },
@@ -39,7 +43,6 @@ const courseSchema = new mongoose.Schema({
   }
 });
 
-// In future need to fix this code is not working
 const Course = mongoose.model("Course", courseSchema);
 
 async function createCourse() {
