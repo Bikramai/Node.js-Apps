@@ -61,7 +61,7 @@ async function createCourse() {
   } catch (ex) {
     if (ex.name === 'ValidationError') {
       for (field in ex.errors) {
-        console.log(ex.errors[field]);
+        console.log(ex.errors[field].message);
       }
     } else {
       console.log(ex.message);
