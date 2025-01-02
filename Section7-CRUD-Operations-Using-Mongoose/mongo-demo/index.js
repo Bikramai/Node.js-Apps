@@ -48,7 +48,7 @@ const Course = mongoose.model("Course", courseSchema);
 async function createCourse() {
   const course = new Course({
     name: "Node.js Course",
-    category: "web",
+    category: "-",
     author: "Bikram",
     tags: null,
     isPublished: true,
@@ -58,9 +58,14 @@ async function createCourse() {
   try {
     const result = await course.save();
     console.log(result);
-  }
-  catch (ex) {
-    console.log(ex.message);
+  } catch (ex) {
+    if (ex.name === 'ValidationError') {
+      for (field in ex.errors) {
+        console.log(ex.errors[field]);
+      }
+    } else {
+      console.log(ex.message);
+    }
   }
 }
 
