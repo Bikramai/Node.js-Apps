@@ -17,8 +17,8 @@ const courseSchema = new mongoose.Schema({
     type: String,
     required: true,
     enum: ["web", "mobile", "network"],
-    // lowercase: true,
-    uppercase: true,
+    lowercase: true,
+    // uppercase: true,
     // trim: true
   },
   author: String,
@@ -43,8 +43,8 @@ const courseSchema = new mongoose.Schema({
       return this.isPublished},
       min: 10,
       max: 200,
-      // get: v => Math.round(v),
-      // set: v => Math.round(v)
+      get: v => Math.round(v),
+      set: v => Math.round(v)
   }
 });
 
@@ -57,7 +57,7 @@ async function createCourse() {
     author: "Bikram",
     tags: ["Frontend"],
     isPublished: true,
-    price: 15
+    price: 15.8
   });
 
   try {
@@ -79,12 +79,13 @@ async function getCourses() {
     const pageSize = 10;
 
   const courses = await Course
-    .find({ author: "Bikram", isPublished: true })
+    .find({ _id: '67795fb7d562ba25614f5df9'})
     // .skip((pageNumber - 1) * pageSize)
     // .limit(10)
-    .sort({ name: 1 })
-    .countDocuments();
-  console.log(courses);
+    .sort({ name: 1})
+    .select({ name: 1, tags: 1, price: 1});
+    // .countDocuments();
+  console.log(courses[0].price);
 }
 async function updateCourse(id) {
   const course = await Course.findByIdAndUpdate(id, { 
@@ -102,5 +103,5 @@ async function removeCourse(id) {
   console.log(course);
 }
 
-createCourse();
+getCourses();
 
