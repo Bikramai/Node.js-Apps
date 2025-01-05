@@ -1,45 +1,47 @@
+const mongoose = require('mongoose')
 const express = require("express");
 const router = express.Router();
 
-const genres = [
-  { id: 1, name: "Action" },
-  { id: 2, name: "Horror" },
-  { id: 3, name: "Romance" },
-];
-router.get("/", (req, res) => {
+const Genre = mongoose.model('Genre', new mongoose.Schema({
+  name: { 
+    type: String, 
+    required: true,
+    minlength: 5,
+    maxlength: 50
+  },
+}));
+  
+router.get("/", async (req, res) => {
+  const genres = await Genre.find().sort('name');
   res.send(genres);
 });
-router.post("/", (req, res) => {
+
+router.post("/", async(req, res) => {
   const { error } = validateGenre(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const genre = {
-    id: genres.length + 1,
-    name: req.body.name,
-  };
-  genres.push(genre);
+  let genre =  new genre ({ name: req.body.name});
+  genre = await genre.save();
+
   res.send(genre);
 });
 
-router.put("/:id", (req, res) => {
-  const genre = genres.find((c) => c.id === parseInt(req.params.id));
-  if (!genre)
-    return res.status(404).send("The genre with the given ID was not found.");
-
+router.put("/:id", async (req, res) => {
   const { error } = validateGenre(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  genre.name = req.body.name;
+  const genre = await Genre.findById(req.params.id, { name: req.body.name }, { 
+    new: true 
+  });
+  if (!genre)return res.status(404).send("The genre with the given ID was not found.");
+
   res.send(genre);
 });
 
-router.delete("/:id", (req, res) => {
-  const genre = genres.find((c) => c.id === parseInt(req.params.id));
-  if (!genre)
-    return res.status(404).send("The genre with the given ID was not found.");
+router.delete("/:id", async (req, res) => {
+  const genre = await Genre.findByIdAndRemove(req.params.id);
 
-  const index = genres.indexOf(genre);
-  genres.splice(index, 1);
+  if (!genre)return res.status(404).send("The genre with the given ID was not found.");
 
   res.send(genre);
 });
