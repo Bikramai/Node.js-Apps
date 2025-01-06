@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Joi = require("joi");
+const customers = require('./routes/customers');
 const genres = require("./routes/genres");
 const express = require("express");
 const app = express();
@@ -11,6 +12,7 @@ mongoose
   
 app.use(express.json());
 app.ude("./api/genres", genres);
+app.use("./api/customers", customers);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
