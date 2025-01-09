@@ -84,5 +84,24 @@ Node js or Node,  is an open open source and cross platform runtime environment 
 - Configuration
 - Debugging
 - Templating Engines
+- Database Integration
+- Authentication
+- Structureing Express Applications
+- Restructure app
+
+# Section-6: Asynchronous JavaScript
+- Synchronous vs Asynchronous Code
+- Patterns for Dealing with Asynchronous code
+- Callbacks
+- Callback Hell
+- Named Functions to Rescue
+- Promises
+- Replacing Callbacks eith Promises
+- Consuming  Promises
+- Creating Settled Promises
+- Running Promises in Parallel 
+- Async and Await
+
+
 
   
