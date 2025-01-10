@@ -102,6 +102,27 @@ Node js or Node,  is an open open source and cross platform runtime environment 
 - Running Promises in Parallel 
 - Async and Await
 
+# Section-7: CRUD Operations Using Mongoose
+- Introducing MongoDB
+- Installing MongoDB on Mac 
+- Installing MongoDB on windows
+- Connecting to MongoDB
+- Schemas
+- Models
+- Saving a Document
+- Querying Documents
+- Comparison Query Operators
+- Logical Query Operators
+- Regular Expressions
+- Counting
+- Pagination
+- Project 1
+- Project 2
+- Project 3
+- Updating a Document -Query First
+- Updating a Document -Update First
+- Removing  Documents
+
 
 
   
