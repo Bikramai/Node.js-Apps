@@ -121,7 +121,21 @@ Node js or Node,  is an open open source and cross platform runtime environment 
 - Project 3
 - Updating a Document -Query First
 - Updating a Document -Update First
-- Removing  Documents
+- Removing Documents
+
+# Mongo - Data Validation
+- Validation
+- Built-in Validators
+- Custom Validators
+- Async Validators
+- Validation Errors
+- SchemaType Options
+- Project - Add Persistence to Genres API
+- Project - Build Customers API
+- Restructuring the Project
+
+
+
 
 
 
