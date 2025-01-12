@@ -134,6 +134,18 @@ Node js or Node,  is an open open source and cross platform runtime environment 
 - Project - Build Customers API
 - Restructuring the Project
 
+# Mongoose- Modeling Relationships between Connected Data
+- Modelling Relationships
+- Referencing Documents
+- Population
+- Embedding Documents
+- Using an array of Sub-Documents
+- Project - Build the Movie API
+- Project - Build the Rentals API
+- Transactions
+- ObjectID
+- Validating ObjectIDs
+- A Better Implementation
 
 
 
