@@ -123,7 +123,7 @@ Node js or Node,  is an open open source and cross platform runtime environment 
 - Updating a Document -Update First
 - Removing Documents
 
-# Mongo - Data Validation
+# Section-8: Mongo - Data Validation
 - Validation
 - Built-in Validators
 - Custom Validators
@@ -134,7 +134,7 @@ Node js or Node,  is an open open source and cross platform runtime environment 
 - Project - Build Customers API
 - Restructuring the Project
 
-# Mongoose- Modeling Relationships between Connected Data
+# Section-9: Mongoose- Modeling Relationships between Connected Data
 - Modelling Relationships
 - Referencing Documents
 - Population
