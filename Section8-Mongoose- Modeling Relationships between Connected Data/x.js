@@ -1,16 +1,16 @@
 // Trade off between query performance vs consistency
 
 // Using References (Normalization) -> CONSISTENCY
-let author = { 
+let author1 = { 
     name: 'Bikram'
 }
 
-let course = { 
+let course1 = { 
     author: 'id'
 }
 
 // Using Embedded Documents (Denormalization) -> PERFORMANCE
-let course = { 
+let course2 = { 
     author: {
         name: 'Bikram' 
     }
