@@ -33,9 +33,11 @@ async function listCourses() {
 }
 
 async function updateAuthor(courseId) {
-  const course = await Course.findById(courseId);
-  course.author.name = 'Ikram Limbu';
-  course.save();
+  const course = await Course.updateMany({ _id: courseId }, {
+    $set: {
+      'author.name': 'John Smith'
+    }
+  });
 }
 
 updateAuthor('678bebb06ac82e38730bc77f')
