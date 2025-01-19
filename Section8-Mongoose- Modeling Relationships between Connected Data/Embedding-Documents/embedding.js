@@ -40,8 +40,16 @@ async function updateAuthor(courseId) {
   });
 }
 
+async function addAuthor(courseId, author) {
+  const course = await Course.findById(courseId);
+  course.authors.push(author);
+  course.save();
+}
+
+addAuthor('678d5a19fc8959783012774a', new Author({ name: 'Ivana'}))
+
 // updateAuthor('678bebb06ac82e38730bc77f')
-createCourse('Node Course', [
-  new Author({ name: 'Bikram' }), 
-  new Author({ name: 'Ikram' })
-]);
+// createCourse('Node Course', [
+//   new Author({ name: 'Bikram' }), 
+//   new Author({ name: 'Ikram' })
+// ]);
