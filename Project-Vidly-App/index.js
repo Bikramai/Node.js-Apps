@@ -11,7 +11,7 @@ mongoose
   .catch((err) => console.error("Could not connect to MongoDB...", err));
   
 app.use(express.json());
-app.ude("./api/genres", genres);
+app.use("./api/genres", genres);
 app.use("./api/customers", customers);
 
 const port = process.env.PORT || 3000;
