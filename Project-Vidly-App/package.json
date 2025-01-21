@@ -2,7 +2,7 @@
   "dependencies": {
     "debug": "^4.3.7",
     "express": "^4.21.2",
-    "joi": "^13.1.0",
+    "joi": "^13.7.0",
     "mongoose": "^8.9.3"
   }
 }
